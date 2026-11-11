@@ -343,6 +343,32 @@
       text-decoration: line-through;
     }
 
+    /* 상품 썸네일 이미지 박스 */
+    .item-image-wrapper {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-height: 220px;
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 4px 0 2px;
+    }
+
+    .item-image {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.2s ease;
+    }
+
+    .item-card:hover .item-image {
+      transform: scale(1.03);
+    }
+
     /* 산뜻하고 눈에 띄는 구매 버튼 */
     .btn-buy {
       display: flex;
@@ -438,6 +464,9 @@
         <span class="tag-category tag-food">🍲 간편식 · 밀키트</span>
         <span class="badge-discount">🔥 오늘특가</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://t1c.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b645/40db0609a375949a30f16e3b92d2c30ca0a6ba3d09aaea80d69e0c20169d.jpg" alt="대운가 고추장 불고기 매콤 양념 돼지 불백 600g 3개" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">[대운가] 고추장 불고기 매콤 양념 돼지 불백 600g × 3개</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 배달앱 켤 필요 없이 후라이팬에 대충 볶으면 점심 배달비 4천원 바로 굳음!
@@ -445,7 +474,7 @@
       <div class="price-box">
         <div class="price-main">
           <span class="price-rate">51%</span>
-          <span class="price-sale">16,110원</span>
+          <span class="price-sale">15,940원</span>
         </div>
         <span class="price-original">32,890원</span>
       </div>
@@ -458,14 +487,17 @@
         <span class="tag-category tag-living">☕ 주방 · 데스크</span>
         <span class="badge-discount">🔥 직장인추천</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/b5e1/44d5de6f9ac90f749b3d4067de0af7ac12c29ef9bfd306b87a3e821575a3.png" alt="소싱 다용도 스마트 머그 인덕션 보온 워머 SF-22H02" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">소싱 다용도 스마트 머그 인덕션 보온 워머 (SF-22H02)</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 딴짓하다가 커피 다 식어서 버리던 사람 필수템. 퇴근할 때까지 따뜻함 유지!
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">52%</span>
-          <span class="price-sale">28,240원</span>
+          <span class="price-rate">26%</span>
+          <span class="price-sale">44,240원</span>
         </div>
         <span class="price-original">60,000원</span>
       </div>
@@ -478,14 +510,17 @@
         <span class="tag-category tag-jinsim">⭐ 진심추천 · 헤어</span>
         <span class="badge-discount">🔥 리뷰 461개</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail1.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/8ea3/2788795f2240c3167c62da20bbcb7469bba6f53760bcef805a2bd34a3053.png" alt="스타일포유 수면 웨이브 헤어롤 그루프 3개입" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">스타일포유 수면 웨이브 헤어롤 그루프 3개입</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 아침에 고데기 20분 하기 귀찮아서 대충 말고 잤는데 인생 여신머리 완성됨
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">27%</span>
-          <span class="price-sale">18,900원</span>
+          <span class="price-rate">58%</span>
+          <span class="price-sale">10,900원</span>
         </div>
         <span class="price-original">26,000원</span>
       </div>
@@ -498,14 +533,17 @@
         <span class="tag-category tag-beauty">🧴 뷰티 · 스킨케어</span>
         <span class="badge-discount">🏆 뷰티 1위</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://t4a.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/955083884438865-364ff482-1d92-43b5-b230-a8f3aea794d3.jpg" alt="에스트라 아토베리어365 크림 플러스 90ml" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">에스트라 아토베리어365 크림 플러스 90ml</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 찬바람에 얼굴 찢어질 때 다른 거 다 필요 없고 이거 하나 듬뿍 바르면 진정 끝
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">20%</span>
-          <span class="price-sale">31,000원</span>
+          <span class="price-rate">23%</span>
+          <span class="price-sale">29,450원</span>
         </div>
         <span class="price-original">38,500원</span>
       </div>
@@ -518,18 +556,21 @@
         <span class="tag-category tag-jinsim">⭐ 진심추천 · 뷰티</span>
         <span class="badge-discount">🔥 리뷰 976개</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail.coupangcdn.com/thumbnails/remote/657x657q90trim/image/vendor_inventory/e7e6/e92851af00c8a1abaa37c4eb2fc93312859a8df528a82247038f8235f7ff.png" alt="스타일포유 V라인 페이스 테이프 투명 100매" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">스타일포유 V라인 페이스 테이프 (투명 100매)</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 야식 먹고 잔 다음 날이나 중요한 약속 갈 때 귀 뒤에 붙이고 머리로 덮는 치트키
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">34%</span>
-          <span class="price-sale">19,900원</span>
+          <span class="price-rate">31%</span>
+          <span class="price-sale">6,900원</span>
         </div>
-        <span class="price-original">30,000원</span>
+        <span class="price-original">10,000원</span>
       </div>
-      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+      <a href="https://link.coupang.com/a/iANhjxTBbU" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
     </article>
 
     <!-- 6. 간편식 / 쭈꾸미볶음 -->
@@ -538,14 +579,17 @@
         <span class="tag-category tag-food">🍲 식품 · 야식</span>
         <span class="badge-discount">🔥 야식특가</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://t3c.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/251033120839857-7c6c1214-ffad-4ade-b840-0aae2a940585.jpg" alt="곰곰 하남식 쭈꾸미 보통매운맛 냉동 450g" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">곰곰 하남식 쭈꾸미 보통매운맛 (냉동) 450g</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 콩나물이랑 밥 대충 볶아 먹으면 밖에서 3만원 주고 사먹는 맛 저리 가라임
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">23%</span>
-          <span class="price-sale">12,910원</span>
+          <span class="price-rate">20%</span>
+          <span class="price-sale">13,390원</span>
         </div>
         <span class="price-original">16,900원</span>
       </div>
@@ -558,14 +602,17 @@
         <span class="tag-category tag-jinsim">⭐ 진심추천 · 살림</span>
         <span class="badge-discount">🔥 리뷰 529개</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://t1c.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/d1ca/b73911801144dc206ff3c8ac9e1988e1334966ac4595a343ef3f77eeb340.png" alt="스타일포유 바닥 보호 가구 옮기기 지렛대 롤러 세트" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">스타일포유 바닥 보호 가구 옮기기 지렛대 롤러 세트</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 남편 부를 필요 없이 혼자서 소파·냉장고 슥 밀고 먼지 싹 쓸어버리는 살림 꿀템
       </div>
       <div class="price-box">
         <div class="price-main">
-          <span class="price-rate">43%</span>
-          <span class="price-sale">39,900원</span>
+          <span class="price-rate">71%</span>
+          <span class="price-sale">19,900원</span>
         </div>
         <span class="price-original">70,000원</span>
       </div>
@@ -577,6 +624,9 @@
       <div class="item-header">
         <span class="tag-category tag-living">☕ 리빙 · 데스크</span>
         <span class="badge-discount">🔥 데스크필수</span>
+      </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail3.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/eb72/891f71c2e6e5ff351016164d2257463cb695dad372501f746e04c2686e87.jpg" alt="피치트렌디 풋쉬풋쉬 사무실 국산 발받침대" class="item-image" loading="lazy">
       </div>
       <h2 class="item-title">피치트렌디 풋쉬풋쉬 사무실 국산 발받침대</h2>
       <div class="curator-note">
@@ -598,6 +648,9 @@
         <span class="tag-category tag-food">🍲 간편식 · 한끼</span>
         <span class="badge-discount">🔥 냉동 1위</span>
       </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail15.coupangcdn.com/thumbnails/remote/492x492ex/image/1025_amir_coupang_oct_80k/d11a/d888fc1a8172f2907da272efc342ce0d6ccafc08bd2b58208c58b3d44efd.jpg" alt="곰곰 새우 볶음밥 냉동 300g 6개" class="item-image" loading="lazy">
+      </div>
       <h2 class="item-title">곰곰 새우 볶음밥 (냉동) 300g × 6개</h2>
       <div class="curator-note">
         💡 <b>대충러 팁:</b> 전자레인지 3분이면 끝. 배달비 아까운 밤에 냉동고에서 꺼내 대충 돌려도 새우가 통통해서 실패가 없음
@@ -617,6 +670,9 @@
       <div class="item-header">
         <span class="tag-category tag-living">☕ 주방 · 데스크</span>
         <span class="badge-discount">🔥 겨울 필수</span>
+      </div>
+      <div class="item-image-wrapper">
+        <img src="https://thumbnail15.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/126246065561186-0e6499df-ef71-45c9-9762-fbe2d4ed3c00.jpg" alt="홈플래닛 탁상용 미니 온풍기 NDQ2531" class="item-image" loading="lazy">
       </div>
       <h2 class="item-title">홈플래닛 탁상용 미니 온풍기 (NDQ2531)</h2>
       <div class="curator-note">
