@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>애 키우는 건 템빨 특가 쇼룸 | @mommy_item_pick</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #f1f5f9;
+      --text-main: #0f172a;
+      --text-sub: #64748b;
+      --text-muted: #94a3b8;
+      --primary: #059669;
+      --primary-soft: #ecfdf5;
+      --orange: #f97316;
+      --orange-soft: #fff7ed;
+      --yellow: #eab308;
+      --yellow-soft: #fefce8;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(254, 240, 138, 0.35) 0px, transparent 50%),
+        radial-gradient(at 100% 10%, rgba(209, 250, 229, 0.45) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(254, 215, 170, 0.3) 0px, transparent 50%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      padding: 16px;
+      max-width: 460px;
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-section {
+      text-align: center;
+      padding: 24px 0 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fde047 0%, #4ade80 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      box-shadow: 0 10px 25px rgba(74, 222, 128, 0.25);
+      border: 3px solid #ffffff;
+    }
+
+    .live-dot {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      width: 16px;
+      height: 16px;
+      background: #10b981;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+    }
+
+    .handle-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      margin-bottom: 10px;
+    }
+
+    .handle-badge span {
+      color: #059669;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .quote-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #475569;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+    }
+
+    .search-box {
+      margin: 18px 0 14px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 14px 16px 14px 44px;
+      color: var(--text-main);
+      font-size: 14px;
+      font-weight: 600;
+      outline: none;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: #059669;
+      box-shadow: 0 4px 20px rgba(5, 150, 105, 0.15);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    .tabs-wrapper {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      scrollbar-width: none;
+    }
+
+    .tabs-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab {
+      flex-shrink: 0;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #64748b;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: all 0.2s ease;
+    }
+
+    .tab.active {
+      background: #059669;
+      color: #ffffff;
+      border-color: #059669;
+      box-shadow: 0 4px 12px rgba(5, 150, 105, 0.25);
+    }
+
+    .card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .item-card {
+      background: #ffffff;
+      border: 1px solid #edf2f7;
+      border-radius: 20px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .item-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tag-category {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      background: var(--primary-soft);
+      color: #059669;
+    }
+
+    .tag-orange {
+      background: var(--orange-soft);
+      color: #ea580c;
+    }
+
+    .badge-discount {
+      font-size: 11px;
+      font-weight: 700;
+      color: #059669;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .item-title {
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.4;
+      color: #0f172a;
+      letter-spacing: -0.4px;
+    }
+
+    .curator-note {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-size: 13px;
+      color: #14532d;
+      line-height: 1.45;
+      font-weight: 500;
+    }
+
+    .curator-note b {
+      color: #059669;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1px solid #edf2f7;
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-top: 2px;
+    }
+
+    .price-main {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .price-rate {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ea580c;
+      letter-spacing: -0.4px;
+    }
+
+    .price-sale {
+      font-size: 20px;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: -0.6px;
+    }
+
+    .price-original {
+      font-size: 13px;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+
+    .btn-buy {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #059669 0%, #047857 100%);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      padding: 14px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(5, 150, 105, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .btn-buy:active {
+      transform: scale(0.98);
+      box-shadow: 0 2px 6px rgba(5, 150, 105, 0.15);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 60px 0;
+      color: var(--text-sub);
+      font-size: 14px;
+      display: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 24px 0 16px;
+      text-align: center;
+      border-top: 1px solid #e2e8f0;
+    }
+
+    footer p {
+      font-size: 11px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="profile-section">
+    <div class="avatar-wrapper">
+      <div class="avatar">🍼</div>
+      <div class="live-dot" title="실시간 최저가 반영 중"></div>
+    </div>
+    <div class="handle-badge">
+      ⚡ <span>@mommy_item_pick</span> 육아템추천
+    </div>
+    <h1>애 키우는 건 템빨 쇼룸</h1>
+    <div class="quote-box">
+      "육아는 진짜 템빨! 삶의 질 올려주는 실속템 👶"
+    </div>
+  </section>
+
+  <!-- 공정위 대가성 문구 안내 -->
+  <p class="disclosure-notice" style="text-align: center; margin: 14px 0 4px; font-size: 12px; color: var(--text-muted, #94a3b8); line-height: 1.5; word-break: keep-all;">
+    이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.
+  </p>
+
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="searchInput" placeholder="육아·살림템 검색 (예: 가구옮기기, 방석, 가습기, 보습...)">
+  </div>
+
+  <div class="tabs-wrapper">
+    <button class="tab active" data-category="all">전체보기</button>
+    <button class="tab" data-category="baby">🍼 육아·아기템</button>
+    <button class="tab" data-category="living">🏠 삶의질 살림템</button>
+    <button class="tab" data-category="healing">☕ 육퇴힐링·간편식</button>
+  </div>
+
+  <main class="card-list" id="cardList">
+
+    <!-- 1. 스타일포유 가구 옮기기 (자사템) -->
+    <article class="item-card" data-category="living" data-name="스타일포유 바닥 보호 가구 옮기기 지렛대 롤러 세트 대청소">
+      <div class="item-header">
+        <span class="tag-category tag-orange">🏠 살림치트키</span>
+        <span class="badge-discount">🔥 리뷰 529개</span>
+      </div>
+      <h2 class="item-title">스타일포유 바닥 보호 가구 옮기기 지렛대 롤러 세트</h2>
+      <div class="curator-note">
+        💡 <b>엄마 팁:</b> 남편 기다리지 말고 혼자서 소파·냉장고 슥 밀고 아기 장난감·먼지 싹 청소 끝!
+      </div>
+      <div class="price-box">
+        <div class="price-main">
+          <span class="price-rate">43%</span>
+          <span class="price-sale">39,900원</span>
+        </div>
+        <span class="price-original">70,000원</span>
+      </div>
+      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+    </article>
+
+    <!-- 2. 스타일포유 산모 도넛방석 (자사템) -->
+    <article class="item-card" data-category="living" data-name="스타일포유 메모리폼 산모 치질 도넛방석 수유방석 임산부">
+      <div class="item-header">
+        <span class="tag-category tag-orange">🏠 산모·회복</span>
+        <span class="badge-discount">🔥 리뷰 255개</span>
+      </div>
+      <h2 class="item-title">스타일포유 메모리폼 산모 도넛방석 (통풍형)</h2>
+      <div class="curator-note">
+        💡 <b>엄마 팁:</b> 출산 후나 오래 앉아 수유할 때 꼬리뼈랑 엉덩이 통증 싹 잡아주는 생명줄
+      </div>
+      <div class="price-box">
+        <div class="price-main">
+          <span class="price-rate">30%</span>
+          <span class="price-sale">19,800원</span>
+        </div>
+        <span class="price-original">28,000원</span>
+      </div>
+      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+    </article>
+
+    <!-- 3. 위도어 대용량 아기 복합식 가습기 -->
+    <article class="item-card" data-category="baby" data-name="위도어 가열살균 통세척 대용량 아기 신생아 복합식 가습기">
+      <div class="item-header">
+        <span class="tag-category">🍼 신생아·가습</span>
+        <span class="badge-discount">🔥 54% OFF</span>
+      </div>
+      <h2 class="item-title">위도어 가열살균 통세척 대용량 아기 복합식 가습기</h2>
+      <div class="curator-note">
+        💡 <b>엄마 팁:</b> 가열 살균돼서 세균 걱정 없고 통세척이라 밤마다 물 채우고 씻기 제일 편함
+      </div>
+      <div class="price-box">
+        <div class="price-main">
+          <span class="price-rate">54%</span>
+          <span class="price-sale">49,800원</span>
+        </div>
+        <span class="price-original">109,000원</span>
+      </div>
+      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+    </article>
+
+    <!-- 4. 존슨즈 베이비 로션 -->
+    <article class="item-card" data-category="baby" data-name="존슨즈 베이비 로션 핑크 유아로션 대용량 순한 아기보습">
+      <div class="item-header">
+        <span class="tag-category">🍼 유아·보습</span>
+        <span class="badge-discount">🏆 리뷰 3만개+</span>
+      </div>
+      <h2 class="item-title">존슨즈 베이비 로션 핑크 500ml × 2개</h2>
+      <div class="curator-note">
+        💡 <b>엄마 팁:</b> 목욕시키고 아기 온몸에 듬뿍 발라주면 은은한 파우더향 나고 건조함 싹 잡힘
+      </div>
+      <div class="price-box">
+        <div class="price-main">
+          <span class="price-rate">35%</span>
+          <span class="price-sale">15,800원</span>
+        </div>
+        <span class="price-original">24,500원</span>
+      </div>
+      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+    </article>
+
+    <!-- 5. 간편식 / 고추장 불백 (육퇴 힐링용) -->
+    <article class="item-card" data-category="healing" data-name="대운가 고추장 불고기 매콤 양념 돼지 불백 밀키트 저녁 육퇴">
+      <div class="item-header">
+        <span class="tag-category tag-orange">🍲 육퇴·간편식</span>
+        <span class="badge-discount">🔥 51% OFF</span>
+      </div>
+      <h2 class="item-title">[대운가] 고추장 불고기 매콤 돼지 불백 600g × 3개</h2>
+      <div class="curator-note">
+        💡 <b>엄마 팁:</b> 애 재우고 밥 차릴 기운 없을 때 후라이팬에 볶아 맥주 한잔 곁들이면 천국
+      </div>
+      <div class="price-box">
+        <div class="price-main">
+          <span class="price-rate">51%</span>
+          <span class="price-sale">16,110원</span>
+        </div>
+        <span class="price-original">32,890원</span>
+      </div>
+      <a href="https://link.coupang.com/a/izkNiJRv6i" target="_blank" class="btn-buy">쿠팡에서 최저가 확인하기 ➔</a>
+    </article>
+
+  </main>
+
+  <div class="empty-state" id="emptyState">
+    찾으시는 육아템이 아직 등록 전이에요 🥲<br>다른 검색어로 찾아보세요!
+  </div>
+
+  <footer>
+    <p>이 포스팅은 쿠팡 파트너스 활동의 일환으로,<br>이에 따른 일정액의 수수료를 제공받습니다.</p>
+  </footer>
+
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const tabs = document.querySelectorAll('.tab');
+    const cards = document.querySelectorAll('.item-card');
+    const emptyState = document.getElementById('emptyState');
+
+    let activeCategory = 'all';
+    let query = '';
+
+    function filterItems() {
+      let matchCount = 0;
+
+      cards.forEach(card => {
+        const categories = card.dataset.category.split(' ');
+        const matchesCategory = (activeCategory === 'all') || categories.includes(activeCategory);
+        
+        const nameText = card.dataset.name.toLowerCase();
+        const matchesQuery = (query === '') || nameText.includes(query.toLowerCase());
+
+        if (matchesCategory && matchesQuery) {
+          card.style.display = 'flex';
+          matchCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      emptyState.style.display = (matchCount === 0) ? 'block' : 'none';
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        activeCategory = tab.dataset.category;
+        filterItems();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      query = e.target.value.trim();
+      filterItems();
+    });
+  </script>
+</body>
+</html>
